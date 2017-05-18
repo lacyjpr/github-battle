@@ -14,9 +14,6 @@ var config = {
 			{ test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}
 		]
 	},
-	devServer: {
-		historyAPIFallback: true,
-	},
 	plugins: [new HtmlWebpackPlugin({
 		template: 'app/index.html'
 	})]
