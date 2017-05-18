@@ -1,16 +1,11 @@
 var express = require('express');
 
-var path = require('path');
+// Create our app
+var app = express();
+const PORT = process.env.PORT || 3000;
 
-app = express();
+app.use(express.static('public'));
 
-app.configure(function(){
-    app.use(express.bodyParser());
-    app.use(express.static(path.join(__dirname, 'dist')));
+app.listen(PORT, function () {
+	console.log('Express server is up on port ' + PORT);
 });
-
-var port = process.env.PORT || 3000;
-
-app.listen(port);
-
-console.log('server started '+port);
