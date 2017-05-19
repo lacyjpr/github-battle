@@ -21,6 +21,7 @@
   "author": "JP Lacy",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.1",
     "express": "^4.15.3",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
