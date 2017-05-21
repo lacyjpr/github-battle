@@ -3,6 +3,8 @@ var Popular = require('./Popular');
 var ReactRouter = require('react-router-dom');
 var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
+var Switch = ReactRouter.Switch;
+var hashHistory = ReactRouter.hashHistory;
 var Nav = require('./Nav');
 var Home = require('./Home');
 var Battle = require('./Battle');
@@ -10,12 +12,18 @@ var Battle = require('./Battle');
 class App extends React.Component {
 	render() {
 		return (
-			<Router>
+			<Router history={hashHistory}>
 				<div className='container'>
 					<Nav />
-					<Route exact path='/' component={Home} />
-					<Route path='/battle' component={Battle} />
-					<Route path='/popular' component={Popular} />
+					<Switch>
+						<Route exact path='/' component={Home} />
+						<Route path='/battle' component={Battle} />
+						<Route path='/popular' component={Popular} />
+						<Route render={function(){
+							return <p>Not Found</p>;
+						}} />
+					</Switch>
+
 				</div>
 			</Router>
 			
