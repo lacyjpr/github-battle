@@ -12,7 +12,7 @@ var Battle = require('./Battle');
 class App extends React.Component {
 	render() {
 		return (
-			<Router history={hashHistory}>
+			<Router>
 				<div className='container'>
 					<Nav />
 					<Switch>
