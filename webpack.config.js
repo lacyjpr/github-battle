@@ -21,7 +21,7 @@ var config = {
 	plugins: [new HtmlWebpackPlugin({
 		template: 'app/index.html'
 	})]
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
 	config.plugins.push(
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 			}
 		}),
 		new webpack.optimize.UglifyJsPlugin()
-	)
+	);
 }
 
-module.exports = config
+module.exports = config;
