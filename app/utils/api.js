@@ -5,14 +5,14 @@ var sec = 'e016b7d833a455d525a25ad62ce3fb286ee3be6e';
 var params = '?client_id=' + id + '&client_secret=' + sec;
 
 function getProfile(username) {
-	return axios.get('https://api.github.com/users' + username + params)
+	return axios.get('https://api.github.com/users/' + username + params)
 		.then(function(user) {
 			return user.data;
 		});
 }
 
 function getRepos(username) {
-	return axios.get('https://api.github.com/users' + username + '/repos' + params + '&per_page=100');
+	return axios.get('https://api.github.com/users/' + username + '/repos' + params + '&per_page=100');
 }
 
 function getStarCount(repos) {
